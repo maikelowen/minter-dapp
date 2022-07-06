@@ -161,11 +161,7 @@ async function checkChain() {
 }
 
 async function loadInfo() {
-  try {
-    window.info = await window.contract.methods.getInfo().call();
-  } catch (error) {
-    console.log(error);
-  }
+  window.info = await window.contract.methods.getInfo().call();
   const publicMintActive = await contract.methods.mintingActive().call();
   const presaleMintActive = await contract.methods.presaleActive().call();
   const mainHeading = document.getElementById("mainHeading");
